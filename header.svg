@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="Kiroshen Naidu, developer in South Africa">
+  <!-- ====================================================================
+       HEADER BANNER - animated forest with falling leaves.
+       To change your name or subtitle, find the two <text> lines near
+       the bottom of this file and edit the words between > and <
+       ==================================================================== -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F2418"/>
+      <stop offset="0.6" stop-color="#1F3D2B"/>
+      <stop offset="1" stop-color="#2E5A3C"/>
+    </linearGradient>
+    <radialGradient id="moonGlow">
+      <stop offset="0" stop-color="#F4F1E8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#F4F1E8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F4F1E8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#F4F1E8" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#F4F1E8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-200%" width="140%" height="500%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <symbol id="leaf" viewBox="-12 -14 24 28" overflow="visible">
+      <path d="M0,-13 C7,-8 8,4 0,13 C-8,4 -7,-8 0,-13 Z"/>
+      <path d="M0,-11 L0,12" stroke="#0F2418" stroke-opacity="0.35" stroke-width="0.9" fill="none"/>
+      <path d="M0,-3 L4,-6 M0,2 L-4,-1 M0,6 L4,3" stroke="#0F2418" stroke-opacity="0.25" stroke-width="0.7" fill="none"/>
+    </symbol>
+    <style>
+      .title { font-family: Georgia, 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+                fill: #F4F1E8; font-size: 46px; letter-spacing: 7px;
+                animation: rise 1.6s ease-out both; }
+      .subtitle { font-family: Georgia, 'Palatino Linotype', 'Times New Roman', serif;
+                   fill: #8FB996; font-size: 15px; letter-spacing: 5px;
+                   animation: rise 1.6s ease-out 0.5s both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      .mist { animation: drift 18s ease-in-out infinite alternate; }
+      @keyframes drift { from { transform: translateX(-120px); } to { transform: translateX(120px); } }
+
+      .fall { animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite; }
+      .sway { animation-name: sway; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
+               transform-box: fill-box; transform-origin: center; }
+      @keyframes fall {
+        0%   { transform: translateY(-40px); opacity: 0; }
+        8%   { opacity: 1; }
+        88%  { opacity: 1; }
+        100% { transform: translateY(330px); opacity: 0; }
+      }
+      @keyframes sway {
+        0%, 100% { transform: translateX(-16px) rotate(-30deg); }
+        50%      { transform: translateX(16px) rotate(40deg); }
+      }
+
+      .firefly { fill: #E8F0C8; filter: url(#glow);
+                 animation-name: flicker; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+      @keyframes flicker {
+        0%, 100% { opacity: 0.1; transform: translate(0, 0); }
+        50%      { opacity: 0.95; transform: translate(6px, -8px); }
+      }
+
+      /* Respect visitors who turn off animations in their device settings */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="900" height="300" rx="14" fill="url(#sky)"/>
+  <clipPath id="frame"><rect width="900" height="300" rx="14"/></clipPath>
+  <g clip-path="url(#frame)">
+    <!-- Pale moon -->
+    <circle cx="720" cy="70" r="80" fill="url(#moonGlow)"/>
+    <circle cx="720" cy="70" r="24" fill="#F4F1E8" fill-opacity="0.85"/>
+
+    <!-- Distant stone mountains -->
+    <path d="M0,215 L70,150 L120,180 L190,105 L250,160 L320,120 L400,175 L470,110 L540,165 L610,125
+             L690,170 L760,115 L830,160 L900,130 L900,300 L0,300 Z" fill="#4B5352" fill-opacity="0.55"/>
+    <!-- Snow/stone highlights -->
+    <path d="M190,105 L205,122 L182,118 Z M470,110 L486,128 L462,124 Z M760,115 L776,132 L752,128 Z"
+          fill="#8A8D8F" fill-opacity="0.7"/>
+
+    <!-- Drifting mist -->
+    <ellipse class="mist" cx="450" cy="198" rx="560" ry="22" fill="#F4F1E8" fill-opacity="0.10" filter="url(#soft)"/>
+
+    <!-- Mid forest hills -->
+    <path d="M0,235 C120,200 220,225 330,210 C450,195 560,230 680,212 C780,198 850,220 900,210 L900,300 L0,300 Z"
+          fill="#24452F"/>
+    <!-- Tree line (pine silhouettes) -->
+    <g fill="#183424">
+      <path d="M40,240 l14,-46 l14,46 Z M70,244 l11,-36 l11,36 Z M95,238 l15,-52 l15,52 Z"/>
+      <path d="M770,236 l15,-50 l15,50 Z M800,242 l12,-38 l12,38 Z M828,238 l14,-48 l14,48 Z M858,243 l11,-34 l11,34 Z"/>
+    </g>
+
+    <!-- Standing stones with moss -->
+    <g>
+      <path d="M150,300 L156,214 L170,206 L186,216 L190,300 Z" fill="#8A8D8F"/>
+      <path d="M156,214 L170,206 L186,216 L182,226 L160,224 Z" fill="#4A7C59"/>
+      <path d="M708,300 L712,226 L726,220 L738,230 L742,300 Z" fill="#8A8D8F" fill-opacity="0.9"/>
+      <path d="M712,226 L726,220 L738,230 L734,238 L715,236 Z" fill="#4A7C59"/>
+    </g>
+
+    <!-- Front ground -->
+    <path d="M0,262 C150,250 300,268 450,258 C600,248 750,266 900,256 L900,300 L0,300 Z" fill="#0F2418"/>
+
+    <!-- Fireflies -->
+      <circle class="firefly" cx="190" cy="181" r="2.0" style="animation-duration:3.4s;animation-delay:-1.8s"/>
+      <circle class="firefly" cx="301" cy="164" r="2.1" style="animation-duration:5.6s;animation-delay:-5.3s"/>
+      <circle class="firefly" cx="647" cy="200" r="2.1" style="animation-duration:5.6s;animation-delay:-5.3s"/>
+      <circle class="firefly" cx="499" cy="194" r="1.8" style="animation-duration:4.2s;animation-delay:-2.0s"/>
+      <circle class="firefly" cx="196" cy="258" r="2.0" style="animation-duration:4.3s;animation-delay:-0.5s"/>
+      <circle class="firefly" cx="124" cy="212" r="2.0" style="animation-duration:4.6s;animation-delay:-4.4s"/>
+      <circle class="firefly" cx="98" cy="173" r="2.4" style="animation-duration:4.1s;animation-delay:-2.6s"/>
+      <circle class="firefly" cx="534" cy="202" r="2.4" style="animation-duration:3.3s;animation-delay:-1.6s"/>
+      <circle class="firefly" cx="434" cy="184" r="2.1" style="animation-duration:3.4s;animation-delay:-2.6s"/>
+      <circle class="firefly" cx="432" cy="226" r="2.4" style="animation-duration:4.5s;animation-delay:-0.9s"/>
+
+    <!-- Name and subtitle (EDIT THE WORDS HERE) -->
+    <text class="title" x="450" y="128" text-anchor="middle">KIROSHEN NAIDU</text>
+    <text class="subtitle" x="450" y="162" text-anchor="middle">DEVELOPER · SOUTH AFRICA</text>
+
+    <!-- Falling leaves (drawn last so they pass in front of everything) -->
+      <g transform="translate(19 0)"><g class="fall" style="animation-duration:13.6s;animation-delay:-1.0s"><g class="sway" style="animation-duration:3.5s;animation-delay:-1.0s"><use href="#leaf" xlink:href="#leaf" x="-9.1" y="-9.1" width="18.1" height="20.8" fill="#C8DCC0" fill-opacity="0.90"/></g></g></g>
+      <g transform="translate(104 0)"><g class="fall" style="animation-duration:9.6s;animation-delay:-4.0s"><g class="sway" style="animation-duration:3.0s;animation-delay:-4.0s"><use href="#leaf" xlink:href="#leaf" x="-9.5" y="-9.5" width="19.0" height="21.9" fill="#8FB996" fill-opacity="0.86"/></g></g></g>
+      <g transform="translate(156 0)"><g class="fall" style="animation-duration:10.6s;animation-delay:-6.6s"><g class="sway" style="animation-duration:4.1s;animation-delay:-6.6s"><use href="#leaf" xlink:href="#leaf" x="-8.9" y="-8.9" width="17.7" height="20.4" fill="#8FB996" fill-opacity="0.90"/></g></g></g>
+      <g transform="translate(174 0)"><g class="fall" style="animation-duration:12.9s;animation-delay:-1.7s"><g class="sway" style="animation-duration:3.3s;animation-delay:-1.7s"><use href="#leaf" xlink:href="#leaf" x="-9.5" y="-9.5" width="19.1" height="22.0" fill="#8FB996" fill-opacity="0.78"/></g></g></g>
+      <g transform="translate(243 0)"><g class="fall" style="animation-duration:10.3s;animation-delay:-6.0s"><g class="sway" style="animation-duration:3.6s;animation-delay:-6.0s"><use href="#leaf" xlink:href="#leaf" x="-13.7" y="-13.7" width="27.4" height="31.5" fill="#C8DCC0" fill-opacity="0.77"/></g></g></g>
+      <g transform="translate(319 0)"><g class="fall" style="animation-duration:13.3s;animation-delay:-6.6s"><g class="sway" style="animation-duration:3.5s;animation-delay:-6.6s"><use href="#leaf" xlink:href="#leaf" x="-12.0" y="-12.0" width="23.9" height="27.5" fill="#C8DCC0" fill-opacity="0.87"/></g></g></g>
+      <g transform="translate(386 0)"><g class="fall" style="animation-duration:10.7s;animation-delay:-1.9s"><g class="sway" style="animation-duration:3.8s;animation-delay:-1.9s"><use href="#leaf" xlink:href="#leaf" x="-10.5" y="-10.5" width="21.1" height="24.2" fill="#8FB996" fill-opacity="0.89"/></g></g></g>
+      <g transform="translate(423 0)"><g class="fall" style="animation-duration:14.1s;animation-delay:-4.1s"><g class="sway" style="animation-duration:4.2s;animation-delay:-4.1s"><use href="#leaf" xlink:href="#leaf" x="-14.1" y="-14.1" width="28.3" height="32.5" fill="#8FB996" fill-opacity="0.88"/></g></g></g>
+      <g transform="translate(461 0)"><g class="fall" style="animation-duration:15.5s;animation-delay:-6.6s"><g class="sway" style="animation-duration:4.1s;animation-delay:-6.6s"><use href="#leaf" xlink:href="#leaf" x="-10.4" y="-10.4" width="20.8" height="23.9" fill="#8FB996" fill-opacity="0.94"/></g></g></g>
+      <g transform="translate(538 0)"><g class="fall" style="animation-duration:11.2s;animation-delay:-7.8s"><g class="sway" style="animation-duration:3.6s;animation-delay:-7.8s"><use href="#leaf" xlink:href="#leaf" x="-14.1" y="-14.1" width="28.3" height="32.5" fill="#8FB996" fill-opacity="0.95"/></g></g></g>
+      <g transform="translate(569 0)"><g class="fall" style="animation-duration:10.9s;animation-delay:-7.6s"><g class="sway" style="animation-duration:2.7s;animation-delay:-7.6s"><use href="#leaf" xlink:href="#leaf" x="-8.7" y="-8.7" width="17.3" height="19.9" fill="#A9C79E" fill-opacity="0.93"/></g></g></g>
+      <g transform="translate(654 0)"><g class="fall" style="animation-duration:14.8s;animation-delay:-4.2s"><g class="sway" style="animation-duration:3.2s;animation-delay:-4.2s"><use href="#leaf" xlink:href="#leaf" x="-15.0" y="-15.0" width="29.9" height="34.4" fill="#A9C79E" fill-opacity="0.84"/></g></g></g>
+      <g transform="translate(725 0)"><g class="fall" style="animation-duration:13.3s;animation-delay:-6.6s"><g class="sway" style="animation-duration:2.9s;animation-delay:-6.6s"><use href="#leaf" xlink:href="#leaf" x="-10.5" y="-10.5" width="21.0" height="24.1" fill="#C8DCC0" fill-opacity="0.78"/></g></g></g>
+      <g transform="translate(746 0)"><g class="fall" style="animation-duration:15.1s;animation-delay:-1.2s"><g class="sway" style="animation-duration:3.3s;animation-delay:-1.2s"><use href="#leaf" xlink:href="#leaf" x="-10.7" y="-10.7" width="21.5" height="24.7" fill="#8FB996" fill-opacity="0.82"/></g></g></g>
+      <g transform="translate(797 0)"><g class="fall" style="animation-duration:12.9s;animation-delay:-9.1s"><g class="sway" style="animation-duration:4.2s;animation-delay:-9.1s"><use href="#leaf" xlink:href="#leaf" x="-11.0" y="-11.0" width="22.0" height="25.3" fill="#A9C79E" fill-opacity="0.97"/></g></g></g>
+      <g transform="translate(894 0)"><g class="fall" style="animation-duration:10.2s;animation-delay:-2.4s"><g class="sway" style="animation-duration:3.0s;animation-delay:-2.4s"><use href="#leaf" xlink:href="#leaf" x="-9.1" y="-9.1" width="18.1" height="20.8" fill="#6E9E6A" fill-opacity="0.96"/></g></g></g>
+  </g>
+</svg>
