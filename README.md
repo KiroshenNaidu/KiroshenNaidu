@@ -1,12 +1,5 @@
 <!-- ============================================================
-     HOW THIS FILE WORKS (comment lines like this are invisible on GitHub)
-     - The banner, dividers and footer are animated pictures stored in
-       the main folder of this repository, next to this README:
-         header.svg   forest banner with falling leaves
-         divider.svg  stone line with a rocking leaf
-         footer.svg   grass, stones and falling leaves
-     - To change your name on the banner, edit header.svg
-       (search for KIROSHEN NAIDU in that file).
+if youre reading this YO MOMS A H-
      ============================================================ -->
 
 <p align="center">
@@ -33,8 +26,7 @@ Outside of code I enjoy fantasy (The Elder Scrolls, Tolkien, D&D), reading, draw
 
 ## Tech stack
 
-<!-- EDIT THIS LIST to match what you actually use.
-     Full list of names: https://github.com/tandpfun/skill-icons#icons-list -->
+<!-- TECH STACK -->
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=ts,js,html,css,git,github,vscode&perline=7&theme=dark" alt="Tech stack" />
@@ -54,8 +46,7 @@ Outside of code I enjoy fantasy (The Elder Scrolls, Tolkien, D&D), reading, draw
 
 ## GitHub activity
 
-<!-- STREAK CARD. Uses a free public server.
-     If it ever shows a broken image, delete these 3 lines. -->
+<!-- STREAK CARD -->
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=KiroshenNaidu&hide_border=true&border_radius=14&background=1F3D2B&stroke=4A7C59&ring=8FB996&fire=8FB996&currStreakNum=F4F1E8&sideNums=F4F1E8&currStreakLabel=8FB996&sideLabels=8FB996&dates=8A8D8F" alt="GitHub streak" />
 </p>
