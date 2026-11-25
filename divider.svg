@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="900" height="50" viewBox="0 0 900 50" role="img" aria-label="Divider">
-  <!-- SECTION DIVIDER - a stone line with a gently rocking leaf in the middle -->
+
   <defs>
     <symbol id="leaf" viewBox="-12 -14 24 28" overflow="visible">
       <path d="M0,-13 C7,-8 8,4 0,13 C-8,4 -7,-8 0,-13 Z"/>
